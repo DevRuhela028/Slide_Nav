@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Slide Down a Navigation Bar on Scroll
+		using HTML CSS and JavaScript
+	</title>
+	
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+	
+	<style>
+        body{
+            background-color: #46211A;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+		article {
+            margin-top: 40px;
+			position: fixed;
+			margin-left: 10px;
+            color: aliceblue;
+		}
+		
+		#navlist {
+			background-color: #F1D3B2;
+			position: fixed;
+			left: 45%;
+			top: -80px;
+			width: auto;
+            height: 70px;
+			display: block;
+			transition: top 0.3s;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 22px;
+		}
+		
+		#navlist a {
+			float: left;
+			display: block;
+			color: black;
+			text-align: center;
+			padding: 12px;
+			text-decoration: none;
+			
+		}
+		
+		#navlist a:hover {
+			background-color: #ec8787;
+            border-radius: 20px;
+			color: black;
+            height: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<article>
+		<h1 style="color:burlywood; font-size: 45px;">
+			PROJECT BY- DEV RUHELA
+		</h1>
+		
+		<b style="font-size: 30px; color: #F1D3B2;">
+			" Slide down navigation bar "
+		</b>
+		
+		
+<p style="font-size: 25px;">
+    The "Slide Down Navigation Bar" project creates a dynamic user interface element where a navigation bar smoothly slides into view as the user scrolls up the webpage and hides when scrolling down. It enhances user experience by maximizing content visibility without sacrificing accessibility to navigation options. Employing HTML, CSS, and JavaScript, the project leverages CSS transitions and JavaScript event handling to achieve the sliding effect based on scroll direction. With minimal code, it delivers an engaging and functional navigation experience, adaptable to various website layouts and design preferences.
+		</p>
+
+	</article>
+	
+	<div id="navlist">
+		<a href="#">Home</a>
+		<a href="#">About </a>
+		<a href="#">Projects</a>
+		<a href="#">Academics</a>
+		<a href="#">Contact</a>
+	</div>
+
+	<div class="scrollable"
+		style="padding:15px 15px 4500px;">
+	</div>
+
+	<script>
+	
+		window.onscroll = function() {
+			scroll()
+		};
+
+		function scroll() {
+			if (document.body.scrollTop > 20 || 
+					document.documentElement.scrollTop > 20)
+			{
+				document.getElementById("navlist").style.top
+							= "0";
+			}
+			else {
+				document.getElementById("navlist").style.top
+							= "-80px";
+			}
+		}
+	</script>
+</body>
+
+</html>
